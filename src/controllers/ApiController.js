@@ -57,7 +57,7 @@ module.exports = {
                 {
                   "text": {
                     "text": [
-                      `"Obrigado, ${aluno_nome}! Podemos continuar nossa conversa. \n Como posso te ajudar? \n Revisão \n Orientação \n Acompanhamento"`
+                      `Obrigado, ${aluno_nome}! Podemos continuar nossa conversa. \n Como posso te ajudar? \n Revisão \n Orientação \n Acompanhamento`
                     ],
                   },
                 },
