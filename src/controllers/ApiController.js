@@ -35,17 +35,17 @@ module.exports = {
 
     if (intentName === 'onboarding.aluno-yes') {
       var name = request.body.queryResult.parameters['aluno-nome'];
-      var aluno_matricula = request.body.queryResult.parameters['aluno-matricula'];
+      var registration = request.body.queryResult.parameters['aluno-matricula'];
 
       try {
         data = {
           name,
-          aluno_matricula
+          registration
         }
-
+        const r;
         //api client
-        await api.post('/student', data)
-        
+      const result = await api.get(`student?${name}`).then(response => r = response.data);
+        console.log(r)
       } catch (error) {
         console.log(error)
       }
