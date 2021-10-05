@@ -42,31 +42,35 @@ module.exports = {
           name,
           registration
         }
-        const r=0;
+      
         //api client
-      await api.get(`student?name=${name}`).then(response => 
-        console.log(response.data))
+      const result = await api.get(`student?name=${name}&registration=${registration}`).then(response => 
+        response.data);
       } catch (error) {
         console.log(error)
       }
-
-      try {
-          response.json (
-            {
-              "fulfillmentMessages": [
-                {
-                  "text": {
-                    "text": [
-                      `Obrigado, ${name}! Podemos continuar nossa conversa. \n Como posso te ajudar? \n Revisão \n Orientação \n Acompanhamento`
-                    ],
+      if (result) {
+          try {
+            response.json (
+              {
+                "fulfillmentMessages": [
+                  {
+                    "text": {
+                      "text": [
+                        `Obrigado, ${name}! Podemos continuar nossa conversa. \n Como posso te ajudar? \n Revisão \n Orientação \n Acompanhamento`
+                      ],
+                    },
                   },
-                },
-              ]
-            }
-          );
-      } catch (error) {
-          return response.json(error)
+                ]
+              }
+            );
+        } catch (error) {
+            return response.json(error)
+        }
+      } else {
+        return response.json(error)
       }
+      
     } 
     
     if (intentName === 'onboarding.aluno-no') {      
