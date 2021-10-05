@@ -34,17 +34,17 @@ module.exports = {
     var intentName = request.body.queryResult.intent.displayName;
 
     if (intentName === 'onboarding.aluno-yes') {
-      var aluno_nome = request.body.queryResult.parameters['aluno-nome'];
+      var name = request.body.queryResult.parameters['aluno-nome'];
       var aluno_matricula = request.body.queryResult.parameters['aluno-matricula'];
 
       try {
-        //api client
         data = {
-          aluno_nome,
+          name,
           aluno_matricula
         }
 
-        const result = await api.post('/student', data)
+        //api client
+        await api.post('/student', data)
         
       } catch (error) {
         console.log(error)
@@ -57,7 +57,7 @@ module.exports = {
                 {
                   "text": {
                     "text": [
-                      `Obrigado, ${aluno_nome}! Podemos continuar nossa conversa. \n Como posso te ajudar? \n Revisão \n Orientação \n Acompanhamento`
+                      `Obrigado, ${name}! Podemos continuar nossa conversa. \n Como posso te ajudar? \n Revisão \n Orientação \n Acompanhamento`
                     ],
                   },
                 },
