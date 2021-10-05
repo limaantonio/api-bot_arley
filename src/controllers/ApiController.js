@@ -42,35 +42,31 @@ module.exports = {
           name,
           registration
         }
-        let result 
+
         //api client
-     result = await api.get(`student?name=${name}&registration=${registration}`).then(response => 
-        response.data);
+        await api.post('/student', data)
+        
       } catch (error) {
         console.log(error)
       }
-      if (result) {
-          try {
-            response.json (
-              {
-                "fulfillmentMessages": [
-                  {
-                    "text": {
-                      "text": [
-                        `Obrigado, ${name}! Podemos continuar nossa conversa. \n Como posso te ajudar? \n Revisão \n Orientação \n Acompanhamento`
-                      ],
-                    },
+
+      try {
+          response.json (
+            {
+              "fulfillmentMessages": [
+                {
+                  "text": {
+                    "text": [
+                      `Obrigado, ${name}! Podemos continuar nossa conversa. \n Como posso te ajudar? \n Revisão \n Orientação \n Acompanhamento`
+                    ],
                   },
-                ]
-              }
-            );
-        } catch (error) {
-            return response.json(error)
-        }
-      } else {
-        return response.json(error)
+                },
+              ]
+            }
+          );
+      } catch (error) {
+          return response.json(error)
       }
-      
     } 
     
     if (intentName === 'onboarding.aluno-no') {      
