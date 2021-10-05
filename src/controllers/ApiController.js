@@ -44,7 +44,7 @@ module.exports = {
         }
         const r;
         //api client
-      const result = await api.get(`student?${name}`).then(response => r = response.data);
+      const result = await api.get(`student?name=${name}`).then(response => r = response.data);
         console.log(r)
       } catch (error) {
         console.log(error)
