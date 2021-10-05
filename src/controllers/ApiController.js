@@ -42,10 +42,10 @@ module.exports = {
           name,
           registration
         }
-        const r;
+        const r=0;
         //api client
-      const result = await api.get(`student?name=${name}`).then(response => r = response.data);
-        console.log(r)
+      await api.get(`student?name=${name}`).then(response => 
+        console.log(response.data))
       } catch (error) {
         console.log(error)
       }
