@@ -1,8 +1,7 @@
-const Content = require('../models/Content')
-const Alunos = require('../models/Alunos')
-var buscaCep = require('busca-cep');
 const { auth } = require('googleapis/build/src/apis/calendar');
 const {google} = require('googleapis');
+const api = require('../services/api')
+
 
 const calendar = google.calendar('v3');
 
@@ -38,20 +37,27 @@ module.exports = {
       var aluno_nome = request.body.queryResult.parameters['aluno-nome'];
       var aluno_matricula = request.body.queryResult.parameters['aluno-matricula'];
 
-      const aluno = {
-        nome: aluno_nome ,
-        matricula: aluno_matricula,
-      }
-    
       try {
-        await Alunos.create(aluno);
+        //api client
+        data = {
+          aluno_nome,
+          aluno_matricula
+        }
+
+        const result = await api.post('/student', data)
+        
+      } catch (error) {
+        console.log(error)
+      }
+
+      try {
           response.json (
             {
               "fulfillmentMessages": [
                 {
                   "text": {
                     "text": [
-                      "Obrigado! Podemos continuar nossa conversa. \n Como posso te ajudar? \n Revisão \n Orientação \n Acompanhamento"
+                      `"Obrigado, ${aluno_nome}! Podemos continuar nossa conversa. \n Como posso te ajudar? \n Revisão \n Orientação \n Acompanhamento"`
                     ],
                   },
                 },
@@ -128,7 +134,33 @@ module.exports = {
         response.json({"fulfillmentText":mensagem});
       });
     }
+  },
+
+  async listStudents (request, response){
+   
+    try {
+      //api client
+      const {data} = await api.get('/student')
+      response.json(data)
+    } catch (error) {
+        response.json(error)
+    }
+  },
+
+  async createStudent (request, response){
+   
+    try {
+      //api client
+      const data = request.body;
+
+      const result = await api.post('/student', data);
+
+      response.json(result)
+    } catch (error) {
+        response.json(error)
+    }
   }
+
 }
 
 
@@ -174,4 +206,6 @@ function formatDate(date) {
 
   return dia + ' ' + nomeMes[mesIndex] + ' ' + ano;
 }
+
+
 
