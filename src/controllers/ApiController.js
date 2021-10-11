@@ -115,14 +115,14 @@ module.exports = {
     }
 
     if (intentName === 'recomendacao - yes') {
-      let content = 'https://ik.imagekit.io/dtx0soiaky/Aulas_assincronas_TCC_II_uf7enSmYG.pdf'
+      let content = 'https://ik.imagekit.io/dtx0soiaky/Aulas_assincronas_TCC_II_uf7enSmYG.pdf?updatedAt=1630581039769'
       response.json ({
         "fulfillmentMessages" : [
           {
             "platform": "TELEGRAM", 
             "text": {
               "text": [
-                content[0].data
+                content
               ]
             }
           }
