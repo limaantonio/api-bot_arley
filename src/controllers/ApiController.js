@@ -99,18 +99,19 @@ module.exports = {
 
       let content = "https://forms.gle/A1RFun9FCZCzQdEu8"; 
 
-      response.json ({
-        "fulfillmentMessages" : [
-          {
-            "platform": "TELEGRAM", 
-            "text": {
-              "text": [
-                content[0].data
-              ]
-            }
-          }
-        ]
-      })
+      // response.json ({
+      //   "fulfillmentMessages" : [
+      //     {
+      //       "platform": "TELEGRAM", 
+      //       "text": {
+      //         "text": [
+      //           content[0].data
+      //         ]
+      //       }
+      //     }
+      //   ]
+      // })
+      response.json ({"fulfillmentText": content})
     }
 
     //professor configura os horarios de atendimento e o bot negocia
