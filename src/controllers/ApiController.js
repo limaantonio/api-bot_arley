@@ -114,6 +114,22 @@ module.exports = {
       response.json ({"fulfillmentText": content})
     }
 
+    if (intentName === 'recomendacao - yes') {
+      let content = 'https://ik.imagekit.io/dtx0soiaky/Aulas_assincronas_TCC_II_uf7enSmYG.pdf'
+      response.json ({
+        "fulfillmentMessages" : [
+          {
+            "platform": "TELEGRAM", 
+            "text": {
+              "text": [
+                content[0].data
+              ]
+            }
+          }
+        ]
+      })
+    }
+
     //professor configura os horarios de atendimento e o bot negocia
     if (intentName === 'agendamento - yes') {
 
