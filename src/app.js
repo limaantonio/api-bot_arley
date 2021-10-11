@@ -4,9 +4,16 @@ const express = require('express');
 const mongoose = require('mongoose');
 //const cors = require('cors');
 const routes = require('./routes');
+const handlebars = require('express-handlebars')
+const bodyParser = require("body-parser");
+
 
 const app = express();
 
+app.engine('handlebars', handlebars({defaultLayout: 'main'}))
+app.set('view engine', 'handlebars')
+
+app.use(bodyParser.urlencoded({extended:false}))
 
 
 mongoose.connect(

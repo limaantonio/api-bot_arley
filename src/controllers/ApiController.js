@@ -97,7 +97,7 @@ module.exports = {
 
     if (intentName === 'revisao.teste - yes') {
 
-      let content = await Content.find(); 
+      let content = "https://forms.gle/A1RFun9FCZCzQdEu8"; 
 
       response.json ({
         "fulfillmentMessages" : [

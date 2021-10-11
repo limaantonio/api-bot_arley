@@ -1,0 +1,79 @@
+{{!-- <form action='/send_answer/{{id}}' method="POST">
+    <div 
+        style="display: flex; flex-direction: column; align-items: center; 
+        justify-content: center; height: 10rem; width: 20rem; 2rem; ">
+        <div style="padding: 2rem;">
+            <label>Pergunta:</label>
+           <label for="">{{question}}</label>
+        </div>
+
+        <div  style="padding: 2rem;">
+            <label>Resposta: </label>
+            <input name="answer"></input>
+        </div>
+        <button style="width: 60%;" type="submit">Responder</button>
+    </div>
+</form> --}}
+
+<style>
+    form {
+        background: #FDE8CD;
+        display: flex; 
+        height: 100vh;
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center;
+        
+       
+    }
+
+    #content {
+        background: #fff;
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center;
+         border-radius: 0.4rem;
+    }
+
+    button {
+        padding: 0.4rem;
+        margin: 0.8rem;
+        border: 0;
+        background: #00917C;
+        border-radius: 0.8rem;
+        color: azure;
+    }
+</style>
+
+<form action='/send_answer/{{id}}' method="POST">
+
+    <div id="content">
+        <div style="padding: 2rem;">
+            <label>Pergunta:</label>
+           <label for="">{{question}}</label>
+        </div>
+
+        <div style="display: flex; align-items: left;">
+            <div>
+            <input type="radio" id="html" name="answer" value="HTML">
+            <label for="html">{{HTML}}</label>
+            </div>
+    
+            <div>
+              <input type="radio" id="css" name="answer" value="CSS">
+            <label for="css">{{CSS}}</label>
+            </div>
+    
+            <div>
+                <input type="radio" id="javascript" name="answer" value="JavaScript">
+                <label for="javascript">{{JavaScript}}</label>
+            </div>
+        </div>
+
+       
+      
+        <button style="width: 60%;" type="submit">Responder</button>
+    </div>
+
+</form>

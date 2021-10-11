@@ -1,0 +1,59 @@
+.bg-primar{
+    background-color: #17AAF7;
+}
+.bg-dropdown{
+    background-color: #46B7F5;
+}
+.status{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+.image-perfil{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+
+#ranking{
+    overflow-y: scroll;
+    height: 785px;
+}
+#acompanhamento{
+    overflow-y: scroll;
+    height: 311px;
+}
+#graficoParticipantes{
+    max-height: 360px;
+}
+
+.border-left-info {
+    border-left: 0.25rem solid #36b9cc !important;
+}
+
+.border-left-success {
+    border-left: 0.25rem solid #1cc88a !important;
+}
+
+.border-left-warning {
+    border-left: 0.25rem solid #f6c23e !important;
+}
+
+.main-panel>.content {
+    margin-top: 50px;
+}
+.card-header-secondary{
+    background-color: royalblue;
+}
+
+#accordionExample .card{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#accordionExample .card#card{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+

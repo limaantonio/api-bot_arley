@@ -1,0 +1,169 @@
+body.dark{
+	background: #292c35;
+    color: #fff;
+}
+body.dark .nav-link p{
+    color: #fff;
+}
+body.dark .sidebar-wrapper{
+	background: #292c35;
+    color: #fff;
+}
+
+body.dark .sidebar .logo{
+	background: #292c35;
+}
+body.dark .sidebar .logo a{
+	color: #fff;
+}
+
+body.dark .material-icons{
+    color: #fff;
+}
+body.dark .label-dark{
+    color: #fff;
+}
+body.dark .navbar-brand {
+    color: #fff;
+}
+body.dark #login_block{
+	background: #292c35;
+    color: #fff;
+    border: 1px solid #fff;
+}
+body.dark #login_block .card-body .tab-content #perfil h3{
+    color: #fff; 
+}
+body.dark #login_block .card-body .tab-content #configuracoes h3{
+    color: #fff; 
+}
+body.dark #login_block .card-body .tab-content #escola h3{
+    color: #fff; 
+}
+body.dark #login_block .card-body .tab-content #plano h3{
+    color: #fff; 
+}
+body.dark #login_block .card-body .tab-content #plano h4{
+    color: #fff; 
+}
+body.dark #login_block .card-body .tab-content .tab-pane form .form-group label{
+    color: #fff; 
+}
+body.dark #login_block .card-body .tab-content .tab-pane form .form-group input{
+    color: #fff;
+}
+body.dark #login_block .card-body .tab-content .tab-pane form .span{
+    color: #fff;
+}
+body.dark #login_block .card-body .tab-content .tab-pane .container hr{
+    background-color: #fff;
+}
+#login_block .card-body .tab-content .tab-pane .termoslink{
+    color: #212529;
+}
+body.dark #login_block .card-body .tab-content .tab-pane .termoslink{
+    color: #fff;
+}
+body.dark #login_block .card-body .tab-content .tab-pane .form-check label{
+    color: #fff; 
+}
+body.dark #login_block .card-body .tab-content .tab-pane .form-check label p{
+    color: #fff; 
+}
+body.dark #login_block .card-body .tab-content .tab-pane .form-check .form-check-sign .check{
+    border-color: #fff; 
+}
+body.dark #login_block .card-body .tab-content .tab-pane form .form-row .d-flex label{
+    color: #fff; 
+}
+body.dark #login_block .card-body .tab-content .tab-pane hr{
+    background-color: #fff;
+}
+body.dark #login_block .card-body .tab-content .tab-pane form .form-row #nivel{
+    color: #fff; 
+    overflow-x: hidden;
+}
+body.dark #login_block .card-body .tab-content .tab-pane form .form-row #curso{
+    color: #fff; 
+}
+body.dark #login_block .card-body .tab-content .tab-pane form a.nav-link{
+    color: #fff; 
+}
+body.dark #login_block .card-body .tab-content .tab-pane form .form-group .levelScholl{
+    color: #212529; 
+}
+body.dark #login_block .card-body .tab-content .tab-pane form .form-group .course{
+    color: #212529; 
+}
+body.dark #login_block form #card{
+    background-color: #292c35; 
+    border: 1px solid #fff;
+}
+body.dark #login_block form #card label{
+    color: #fff;
+}
+body.dark #login_block form #card h5{
+    color: #fff;
+}
+body.dark #login_block .container canvas{
+    border: 1px solid #fff;
+    border-radius: 6px;
+    padding: 8px;
+}
+body.dark #login_block .container #exampleModalLabel{
+    color: #212529;
+}
+body.dark #login_block .container #exampleModalLabel{
+    color: #212529;
+}
+body.dark #login_block .card-body .tab-content .tab-pane form .form-group .control-label{
+    color: #212529; 
+}
+body.dark #login_block .card-body .tab-content .tab-pane .form-check-radio label{
+    color: #212529; 
+}
+body.dark #login_block .card-body .tab-content .tab-pane .container .text-left{
+    color: #212529; 
+}
+body.dark #login_block .card-body .tab-content .tab-pane .container .text-left .material-icons{
+    color: #212529; 
+}
+body.dark .content .col-right .menu span{
+    color: #212529; 
+}
+body.dark .tab-pane th{
+    color: #fff; 
+}
+body.dark .tab-pane td span{
+    color: #fff; 
+}
+body.dark .tab-pane td span{
+    color: #fff; 
+}
+body.dark #chatbot{
+    color: #fff; 
+}
+body.dark #relatorios{
+    color: #fff; 
+}
+body.dark .modal-content .modal-header #h5{
+    color: #212529; 
+}
+
+body.dark #fedbackStatus p{
+    color: #212529; 
+}
+
+body.dark .drp-calendar .calendar-table .table-condensed td{
+    color: #212529; 
+}
+
+body.dark .drp-calendar .calendar-table .table-condensed th{
+    color: #212529; 
+}
+
+body.dark .drp-buttons .drp-selected{
+    color: #212529; 
+}
+
+
