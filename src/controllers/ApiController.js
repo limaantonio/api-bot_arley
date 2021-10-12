@@ -35,14 +35,10 @@ module.exports = {
 
     if (intentName === 'onboarding.aluno-yes') {
       var registration = request.body.queryResult.parameters['aluno-matricula'];
-
-      
      
       try {
         const {data} = await api.get(`/student?registration=${registration}`)
-        console.log(data);
-        console.log(data[0].registration)
-
+        
         if (data[0].registration) {
           response.json (
             {
@@ -57,6 +53,42 @@ module.exports = {
               ]
             }
           );
+
+  
+          
+          if (intentName === 'revisao.quiz - yes') {
+            let conteudo = request.body.queryResult.outputContexts[1].parameters['revisao-conteudo'];
+      
+            var quiz = `Aqui está um Quiz sobre ${conteudo}:\n
+              Questão 1 - O que é um banco de dados?\n
+              Questão 2 - Quais as formas normais?`
+            
+            response.json ({"fulfillmentText": quiz})
+          }
+      
+          if (intentName === 'revisao.teste - yes') {
+      
+            let content = "https://forms.gle/A1RFun9FCZCzQdEu8"; 
+      
+            response.json ({"fulfillmentText": content})
+          }
+      
+          if (intentName === 'recomendacao - yes') {
+            let content = 'https://ik.imagekit.io/dtx0soiaky/Aulas_assincronas_TCC_II_uf7enSmYG.pdf?updatedAt=1630581039769'
+            response.json ({
+              "fulfillmentMessages" : [
+                {
+                  "platform": "TELEGRAM", 
+                  "text": {
+                    "text": [
+                      content
+                    ]
+                  }
+                }
+              ]
+            })
+          }
+
         } else {
           response.json ({"fulfillmentText": "Não deu certo!"})
         }
@@ -66,7 +98,7 @@ module.exports = {
           return response.json(error)
       }
     } 
-    
+
     if (intentName === 'onboarding.aluno-no') {      
       response.json (
         {
@@ -82,39 +114,7 @@ module.exports = {
         }
       )
     }
-    
-    if (intentName === 'revisao.quiz - yes') {
-      let conteudo = request.body.queryResult.outputContexts[1].parameters['revisao-conteudo'];
-
-      var quiz = `Aqui está um Quiz sobre ${conteudo}:\n
-        Questão 1 - O que é um banco de dados?\n
-        Questão 2 - Quais as formas normais?`
-      
-      response.json ({"fulfillmentText": quiz})
-    }
-
-    if (intentName === 'revisao.teste - yes') {
-
-      let content = "https://forms.gle/A1RFun9FCZCzQdEu8"; 
-
-      response.json ({"fulfillmentText": content})
-    }
-
-    if (intentName === 'recomendacao - yes') {
-      let content = 'https://ik.imagekit.io/dtx0soiaky/Aulas_assincronas_TCC_II_uf7enSmYG.pdf?updatedAt=1630581039769'
-      response.json ({
-        "fulfillmentMessages" : [
-          {
-            "platform": "TELEGRAM", 
-            "text": {
-              "text": [
-                content
-              ]
-            }
-          }
-        ]
-      })
-    }
+  
 
     //professor configura os horarios de atendimento e o bot negocia
     if (intentName === 'agendamento - yes') {
