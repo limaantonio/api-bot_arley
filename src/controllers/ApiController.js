@@ -56,7 +56,7 @@ module.exports = {
 
   
           
-          if (intentName === 'revisao.quiz - yes') {
+          if (intentName === 'revisao.quiz - yes' && data[0].registration) {
             let conteudo = request.body.queryResult.outputContexts[1].parameters['revisao-conteudo'];
       
             var quiz = `Aqui está um Quiz sobre ${conteudo}:\n
@@ -66,14 +66,14 @@ module.exports = {
             response.json ({"fulfillmentText": quiz})
           }
       
-          if (intentName === 'revisao.teste - yes') {
+          if (intentName === 'revisao.teste - yes' && data[0].registration) {
       
             let content = "https://forms.gle/A1RFun9FCZCzQdEu8"; 
       
             response.json ({"fulfillmentText": content})
           }
       
-          if (intentName === 'recomendacao - yes') {
+          if (intentName === 'recomendacao - yes'  && data[0].registration) {
             let content = 'https://ik.imagekit.io/dtx0soiaky/Aulas_assincronas_TCC_II_uf7enSmYG.pdf?updatedAt=1630581039769'
             response.json ({
               "fulfillmentMessages" : [
