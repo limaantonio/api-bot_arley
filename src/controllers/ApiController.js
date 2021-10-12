@@ -41,16 +41,16 @@ module.exports = {
       try {
         const {data} = await api.get(`/student?registration=${registration}`)
         console.log(data);
-        console.log(data.registration)
+        console.log(data[0].registration)
 
-        if (data.registration) {
+        if (data[0].registration) {
           response.json (
             {
               "fulfillmentMessages": [
                 {
                   "text": {
                     "text": [
-                      `Obrigado, ${data.name}! Podemos continuar nossa conversa. \n Como posso te ajudar? \n Revisão \n Orientação \n Acompanhamento`
+                      `Obrigado, ${data[0].name}! Podemos continuar nossa conversa. \n Como posso te ajudar? \n Revisão \n Orientação \n Acompanhamento`
                     ],
                   },
                 },
@@ -157,7 +157,7 @@ module.exports = {
       //api client
       const {data} = await api.get(`/student?registration=${registration}`)
       
-      response.json(data)
+      response.json(data[0].name)
     } catch (error) {
         response.json(error)
     }
