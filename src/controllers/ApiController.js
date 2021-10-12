@@ -35,9 +35,13 @@ module.exports = {
 
     if (intentName === 'onboarding.aluno-yes') {
       var registration = request.body.queryResult.parameters['aluno-matricula'];
+
+      
      
       try {
         const {data} = await api.get(`/student?registration=${registration}`)
+        console.log(data);
+        console.log(data.registration)
 
         if (data.registration) {
           response.json (
