@@ -34,14 +34,13 @@ module.exports = {
     var intentName = request.body.queryResult.intent.displayName;
 
     if (intentName === 'onboarding.aluno-yes') {
-      var name = request.body.queryResult.parameters['aluno-nome'];
       var registration = request.body.queryResult.parameters['aluno-matricula'];
-
      
       try {
         const {data} = await api.get(`/student?registration=${registration}`)
-        
-        response.json (
+
+        if (data.registration) {
+          response.json (
             {
               "fulfillmentMessages": [
                 {
@@ -54,6 +53,11 @@ module.exports = {
               ]
             }
           );
+        } else {
+          response.json ({"fulfillmentText": "Não deu certo!"})
+        }
+        
+        
       } catch (error) {
           return response.json(error)
       }
