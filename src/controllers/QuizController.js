@@ -29,7 +29,7 @@ module.exports = {
         try {
             const {question} = await Quiz.findById(id);
 
-            res.render('index', {question, id})
+            res.render('formulario', {question, id})
 
         } catch (error) {
           

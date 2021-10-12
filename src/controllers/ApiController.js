@@ -37,27 +37,17 @@ module.exports = {
       var name = request.body.queryResult.parameters['aluno-nome'];
       var registration = request.body.queryResult.parameters['aluno-matricula'];
 
+     
       try {
-        data = {
-          name,
-          registration
-        }
-
-        //api client
-        await api.post('/student', data)
+        const {data} = await api.get(`/student?registration=${registration}`)
         
-      } catch (error) {
-        console.log(error)
-      }
-
-      try {
-          response.json (
+        response.json (
             {
               "fulfillmentMessages": [
                 {
                   "text": {
                     "text": [
-                      `Obrigado, ${name}! Podemos continuar nossa conversa. \n Como posso te ajudar? \n Revisão \n Orientação \n Acompanhamento`
+                      `Obrigado, ${data.name}! Podemos continuar nossa conversa. \n Como posso te ajudar? \n Revisão \n Orientação \n Acompanhamento`
                     ],
                   },
                 },
@@ -99,18 +89,6 @@ module.exports = {
 
       let content = "https://forms.gle/A1RFun9FCZCzQdEu8"; 
 
-      // response.json ({
-      //   "fulfillmentMessages" : [
-      //     {
-      //       "platform": "TELEGRAM", 
-      //       "text": {
-      //         "text": [
-      //           content[0].data
-      //         ]
-      //       }
-      //     }
-      //   ]
-      // })
       response.json ({"fulfillmentText": content})
     }
 
@@ -158,6 +136,19 @@ module.exports = {
     try {
       //api client
       const {data} = await api.get('/student')
+      response.json(data)
+    } catch (error) {
+        response.json(error)
+    }
+  },
+
+  async loginStudent (request, response){
+    const {registration} = request.params;
+   
+    try {
+      //api client
+      const {data} = await api.get(`/student?registration=${registration}`)
+      
       response.json(data)
     } catch (error) {
         response.json(error)
