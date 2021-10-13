@@ -58,7 +58,7 @@ module.exports = {
 
 
           
-        } else {
+        } else if (data[0].registration == undefined) {
           response.json ({"fulfillmentText": "Não deu certo!"})
         }
         
