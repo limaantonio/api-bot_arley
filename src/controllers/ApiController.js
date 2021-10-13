@@ -38,6 +38,8 @@ module.exports = {
      
       try {
         const {data} = await api.get(`/student?registration=${registration}`)
+        console.log(data[0])
+        console.log(data[0].registration)
         
         if (data[0].registration) {
           response.json (
